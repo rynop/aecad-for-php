@@ -16,7 +16,7 @@ This project leverages the AWS memcached [config](http://docs.amazonwebservices.
 
 1. put nginx.conf in <code>sudo cp nginx.conf /etc/nginx/sites-enabled/aecad.conf</code>
 2. make a webroot and put aecad.php in it <code>sudo mkdir -p /opt/webtools && sudo cp aecad.php /opt/webtools && sudo chown -R www-data /opt/webtools && sudo chmod 600 /opt/webtools/aecad.php</code> 
-3. copy <code>aecad.sh</code> to <code>/opt/webtools</code> the edit to set <code>CLUSTER_NAME</code>, <code>CONFIGURATION_ENDPOINT</code> and <code>CONFIGURATION_ENDPOINT_PORT</code>
+3. copy <code>aecad.sh</code> to <code>/opt/webtools</code> then edit to set <code>CLUSTER_NAME</code>, <code>CONFIGURATION_ENDPOINT</code> and <code>CONFIGURATION_ENDPOINT_PORT</code>
 4. restart nginx <code>sudo /etc/init.d/nginx restart</code>
 4. make cron: <code>sudo cp aecad.cron /etc/cron.d/aecad && sudo chown root:root /etc/cron.d/aecad</code>
 3. optionally edit aecad.php and change the APC key used to store the servers.
