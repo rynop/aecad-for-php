@@ -36,7 +36,7 @@ if(!empty($ecServers)) {
 	}
 }
 
-/** for debug
-$s = apc_fetch(KEYNAME);
-var_export($s);
-**/
+/** for debug **/
+//$s = apc_fetch(KEYNAME);
+//var_export($s);
+
