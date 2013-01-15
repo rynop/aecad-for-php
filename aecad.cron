@@ -9,5 +9,5 @@
 ####
 
 #run the auto discovery every minute
-* * * * *     root   /opt/webtools/aecad.sh > /dev/null
+* * * * *     root   /opt/webtools/aecad.sh > /var/log/aecad.sh
 

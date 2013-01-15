@@ -17,7 +17,7 @@
 define("KEYNAME", "ec_servers");
 
 if(empty($_GET['server'])) {
-	echo "no servers";
+	echo "no servers. Not updating ".gmdate("Y-m-d H:i:s e");
 	exit();
 }
 
@@ -33,6 +33,10 @@ if(!empty($ecServers)) {
 	$existing = apc_fetch(KEYNAME);
 	if(empty($existing) || $existing != $ecServers){
 		apc_store(KEYNAME,$ecServers);
+		echo "Updated at ".gmdate("Y-m-d H:i:s e")." with servers:\n".var_export($ecServers,true);
+	}
+	else {
+		echo "Servers have NOT changed at ".gmdate("Y-m-d H:i:s e").". servers:\n".var_export($ecServers,true);
 	}
 }
 

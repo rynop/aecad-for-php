@@ -49,4 +49,5 @@ $m->addServers($servers);
 
 The APC key will only be updated if it has changed.
 
-To test things are working you can var_export() the APC key from your app.
+To check if things are working look at /var/log/aecad.log
+
