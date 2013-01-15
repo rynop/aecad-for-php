@@ -10,8 +10,7 @@
 #
 ####
 
-CLUSTER_NAME="my-cluster"
-CONFIGURATION_ENDPOINT="${CLUSTER_NAME}.1234.cfg.use1.cache.amazonaws.com"
+CONFIGURATION_ENDPOINT="your-cluster-name.1234.cfg.use1.cache.amazonaws.com"
 CONFIGURATION_ENDPOINT_PORT="11211"
 LOCAL_WS_PORT="49000"
 
@@ -21,6 +20,7 @@ LOCAL_WS_PORT="49000"
 #1
 #<CONFIGURATION_NAME>.blah|10.1.1.1|11211 <CONFIGURATION_NAME>.blah|10.2.2.2|11211
 
+CLUSTER_NAME=`echo $CONFIGURATION_ENDPOINT | cut -d'.' -f 1`
 output=`echo 'config get cluster' | nc $CONFIGURATION_ENDPOINT $CONFIGURATION_ENDPOINT_PORT`
 
 QS=""
@@ -39,7 +39,7 @@ for server in $output; do
 	fi
 done
 
-if [ !-z "$QS" ]; then	
+if [ -n "$QS" ]; then	
 	curl -s "localhost:${LOCAL_WS_PORT}/aecad.php?${QS}"
 fi
 
