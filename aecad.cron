@@ -1,0 +1,13 @@
+####
+#
+# elasticache auto-discovery cron - async update of active servers for PHP clients
+#
+# @see https://github.com/rynop/aecad-for-php
+#
+# @license      MIT License (http://www.opensource.org/licenses/mit-license.php)
+#
+####
+
+#run the auto discovery every minute
+* * * * *     root   /opt/webtools/aecad.sh > /dev/null
+
